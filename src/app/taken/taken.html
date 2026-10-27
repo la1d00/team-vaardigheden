@@ -1,0 +1,10 @@
+<div class="taken">
+    <input type="text" [(ngModel)]="niueuweTaak">
+    <button (click)="taaktoevoegen()">Toevoegen</button>
+
+    <ul>
+        @for (taak of taken; track taak) {
+        <li>{{taak}} <button (click)="taakverwijderen(taak)">Verwijderen</button></li>
+        }
+    </ul>
+</div>
