@@ -4,7 +4,12 @@
 
     <ul>
         @for (taak of taken; track taak) {
-        <li>{{taak}} <button (click)="taakverwijderen(taak)">Verwijderen</button></li>
+        <li [style.color]="gevinteTaken.includes(taak) ? 'green' : 'black'">
+            {{taak}}
+            <button (click)="taakverwijderen(taak)">Verwijderen</button>
+            <button (click)="kleurveranderen(taak)">✓</button>
+        </li>
         }
+
     </ul>
 </div>

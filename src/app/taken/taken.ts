@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class Taken {
   taken: string[] = [];
   niueuweTaak = "";
+  gevinteTaken: string[] = [];
 
   taaktoevoegen() {
     this.taken.push(this.niueuweTaak);
@@ -26,5 +27,20 @@ export class Taken {
       }
     }
     this.taken = nieuweTaken;
+  }
+
+  kleurveranderen(taak: string) {
+    if (this.gevinteTaken.includes(taak)) {
+      let niueweTaken: string[] = [];
+
+      for (let tk of this.gevinteTaken) {
+        if (tk !== taak) {
+          niueweTaken.push(tk);
+        }
+      }
+      this.gevinteTaken = niueweTaken;
+    } else {
+      this.gevinteTaken.push(taak);
+    }
   }
 }
