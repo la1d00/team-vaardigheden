@@ -1,0 +1,66 @@
+import { Component, signal } from '@angular/core';
+
+@Component({
+  selector: 'app-studiestips',
+  imports: [],
+  templateUrl: './studiestips.html',
+  styleUrl: './studiestips.css',
+})
+export class Studiestips {
+  private readonly tips: string[] = [
+    'Werk in blokken van 25 minuten met 5 minuten pauze (Pomodoro-techniek).',
+    'Begin met het moeilijkste vak wanneer je nog fris bent.',
+    'Leg je gsm in een andere kamer terwijl je studeert.',
+    'Leg de leerstof in je eigen woorden uit, alsof je het aan iemand anders uitlegt.',
+    'Test jezelf met oefenvragen in plaats van alleen je cursus te herlezen.',
+    'Spreid je leerstof over meerdere dagen in plaats van alles de avond voor het examen.',
+    'Maak een realistische planning en plan ook rustmomenten in.',
+    'Slaap voldoende: tijdens het slapen verwerkt je brein wat je geleerd hebt.',
+    'Studeer op een vaste, opgeruimde plek.',
+    'Maak samenvattingen of mindmaps met je eigen woorden.',
+    'Beantwoord eerst wat je al weet en markeer wat je nog niet snapt.',
+    'Studeer samen met een medestudent en overhoor elkaar.',
+    'Drink genoeg water en eet iets gezonds tijdens het studeren.',
+    'Neem korte wandelpauzes om je hoofd leeg te maken.',
+    'Herhaal de leerstof van gisteren voor je aan nieuwe stof begint.',
+    'Gebruik flashcards voor definities en formules.',
+    'Stel per studiesessie één concreet doel, bijvoorbeeld "hoofdstuk 3 afwerken".',
+    'Vraag hulp aan je docent als je ergens op vastloopt, wacht daar niet mee.',
+    'Maak oefenexamens onder echte examenomstandigheden.',
+    'Begin met een kort overzicht van het hoofdstuk voordat je de details leest.',
+    'Verdeel een grote taak in kleine stappen die je één voor één afvinkt.',
+    'Leer actief: schrijf, teken of spreek hardop in plaats van alleen te lezen.',
+    'Gebruik voorbeelden en eigen situaties om abstracte begrippen te onthouden.',
+    'Studeer niet langer dan twee uur zonder een echte pauze.',
+    'Zet meldingen op je laptop uit tijdens een studiesessie.',
+    'Plan het moeilijkste of saaiste onderdeel eerst, dan heb je dat achter de rug.',
+    'Vraag jezelf na elk hoofdstuk: wat zijn de drie belangrijkste dingen die ik geleerd heb?',
+    'Leg verbanden tussen nieuwe leerstof en wat je al kent.',
+    'Gebruik kleuren spaarzaam bij het markeren, anders is alles belangrijk en niets meer.',
+    'Maak een lijstje van je fouten uit oefeningen en herhaal die vaker.',
+    'Studeer op verschillende momenten van de dag om te ontdekken wanneer je het best werkt.',
+    'Zorg voor goed licht en een comfortabele zithouding aan je bureau.',
+    'Beweeg regelmatig: even sporten helpt je concentratie.',
+    'Begin je studiedag met een duidelijke to-do-lijst van maximaal vijf punten.',
+    'Gebruik de Feynman-techniek: leg het uit alsof je tegen een kind praat.',
+    'Lees je notities na de les nog dezelfde dag even door.',
+    'Maak een formularium of cheat sheet voor formules en belangrijke begrippen.',
+    'Studeer niet met de tv of sociale media op de achtergrond.',
+    'Zoek bij moeilijke stof een extra uitleg, zoals een filmpje of een andere bron.',
+    'Teken schema\'s en tijdlijnen om verbanden en volgorde te onthouden.',
+    'Neem je eigen tempo: vergelijk je voortgang niet te veel met anderen.',
+    'Houd een vaste slaap- en opstaantijd aan, ook tijdens de blok.',
+    'Gebruik ezelsbruggetjes voor lijstjes en volgordes.',
+    'Overhoor jezelf hardop, dat voelt moeilijker maar werkt beter.',
+    'Neem tijd om te herhalen: nieuwe stof zonder herhaling verdwijnt snel.',
+    'Zeg nee tegen afleiding en spreek met huisgenoten af wanneer je niet gestoord wilt worden.',
+    'Vier kleine successen, ook als je maar een deel van je planning haalt.',
+    'Ga na een slechte studiedag niet piekeren, maar start de volgende dag opnieuw.',
+    'Bereid je voor op examens door ook de vraagstijl van vorige jaren te bekijken.',
+    'Beloon jezelf nadat je je doel gehaald hebt.',
+  ];
+
+  protected readonly tip = signal(
+    this.tips[Math.floor(Math.random() * this.tips.length)]
+  );
+}
